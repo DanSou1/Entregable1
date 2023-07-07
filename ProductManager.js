@@ -14,18 +14,19 @@ class ProductManager{
             thumbnail: link,
             cantidad: stock 
         }
-        if(title == "" || description == ""|| price == "" ||link =="" || stock ==""){
+        if(title === "" || description === ""|| price === "" ||link ==="" || stock ===""){
             console.log('Su producto no puede ser cargado');
             return false
         }
         else{
-            this.products[this.id]= producto;
+            producto.id = this.id;
+            this.products.push(producto);
             this.id +=1
             return true
         }
     }
     getProductById(id){
-        if (this.products[id] == undefined){
+        if (this.products[id] === undefined){
             console.log('Su id no existe');
         }
         else{
